@@ -38,11 +38,6 @@ sysdir
 
 
 ## 使用
-### bitcoin -- 自动获取比特币价格数据和波动率指数并绘制一幅JavaScript图表
-```stata
-bitcoin
-```
-![](http://www.czxa.top/finance/img/czxa_2018-09-17_21.56.33.png)
 
 ### cnstock2 -- 爬取沪市、深市或两市所有上市公司基本情况数据
 这个命令需要两个shell命令支持，具体阅读我的这篇博客：[彻底解决Stata无法读取过宽文件的问题&cnstock2命令获取上市公司基本情况信息](http://www.czxa.top/posts/43828/)。Mac用户可以直接使用。Windows用户需要安装curl和[sed](http://batch-cn.qiniudn.com/tool/sed.exe)才能使用。
@@ -189,34 +184,6 @@ irate
 ```
 ![](http://www.czxa.top/finance/img/irate.png)
 
-### kline2 -- 调用ECharts绘制蜡烛图
-#### 语法
-```stata
-kline2 code, [start(string) end(string) stock index scheme(string)]
-```
-+ code 股票代码
-+ 中国上市公司的股票代码为六位数字，这不同与纽约证券交易所。 例如:
-    000001 平安银行
-    000002 万科
-    600000 浦发银行
-    600005 武钢股份
-+ 开头的0是可以被省略的。
-
-#### 选项
-
-    start(string):数据起始日期；
-    end(string):数据截止日期；
-    stock:指定代码为股票代码，这是默认的；
-    index:指定代码为股票指数代码；
-    scheme(string):
-        控制绘图的主题，有dark/roma/vintage/macarons/infographic/shine六种可选，默认vintage主题。
-
-#### 示例
-```stata
-kline2 1, start(20180101) end(20180701)
-kline2 1, start(20180101) end(20180701) index
-```
-![](http://www.czxa.top/finance/img/czxa_2018-09-17_22.23.55.png)
 
 ### numdate2string -- 将数值型日期转变成字符串型日期
 #### 语法
